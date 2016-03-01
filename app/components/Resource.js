@@ -10,7 +10,6 @@ const Resource = React.createClass({
   },
 
   open(url) {
-    console.log('opening url...');
     window.open(url);
   },
 

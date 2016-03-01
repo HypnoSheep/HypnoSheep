@@ -26,11 +26,12 @@ const ResourceForm = React.createClass({
   },
 
   validateUrl(e) {
+    //Tests the entered url on each keystroke with regex to check if it's a valid url and
+    //changes state based on validity, then uses this state when rendering the modal.
     const url = e.target.value;
     const urlregex = /^(https?|ftp):\/\/([a-zA-Z0-9.-]+(:[a-zA-Z0-9.&%$-]+)*@)*((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9][0-9]?)(\.(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9]?[0-9])){3}|([a-zA-Z0-9-]+\.)*[a-zA-Z0-9-]+\.(com|edu|gov|int|mil|net|org|biz|arpa|info|name|pro|aero|coop|museum|[a-zA-Z]{2}))(:[0-9]+)*(\/($|[a-zA-Z0-9.,?'\\+&%$#=~_-]+))*$/;
     const isValidUrl = urlregex.test(url);
     const urlError = isValidUrl ? null : "Invalid url, format should be http://www.google.com";
-    console.log('valid ', isValidUrl);
     this.setState({ urlError, isValidUrl });
   },
 
