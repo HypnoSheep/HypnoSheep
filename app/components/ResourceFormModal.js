@@ -21,6 +21,7 @@ const ResourceForm = React.createClass({
   },
 
   urlChange(e) {
+    //Changes state and checks validation on each keystroke
     this.setState({ url: e.target.value })
     this.validateUrl(e);
   },
